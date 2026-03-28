@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import { Analytics } from '@vercel/analytics/react';
+import { Analytics } from '@vercel/analytics/next';
 
 const BASE_URL = 'https://revisor-contrato-inmobiliaria.vercel.app';
 
@@ -70,6 +70,31 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body>
         {children}
+        <footer style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          borderTop: '1px solid #e5e7eb',
+          padding: '1.5rem',
+          flexWrap: 'wrap',
+          gap: '1rem',
+        }}>
+          <div style={{ display: 'flex', flexDirection: 'column' }}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/logo-iamagica.png" alt="IAMagica" style={{ height: '28px', width: 'auto' }} />
+            <span style={{ fontSize: '12px', color: '#9ca3af', marginTop: '4px' }}>© 2026 IAMagica</span>
+          </div>
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end' }}>
+            <span style={{ fontSize: '12px', fontWeight: 600, color: '#1B4332', letterSpacing: '0.5px' }}>DIGITALIZA TU NEGOCIO</span>
+            <a
+              href="mailto:info@iamagica.es"
+              style={{ textDecoration: 'none', color: '#6b7280', display: 'flex', flexDirection: 'column', alignItems: 'flex-end', marginTop: '4px' }}
+            >
+              <span style={{ fontSize: '20px', lineHeight: 1 }}>✉</span>
+              <span style={{ fontSize: '12px' }}>info@iamagica.es</span>
+            </a>
+          </div>
+        </footer>
         <Analytics />
       </body>
     </html>
